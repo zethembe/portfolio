@@ -1,56 +1,24 @@
-<!DOCTYPE html>
+{%extends "app/layout.html"%}
+{%block body%}
 {%load staticfiles%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-   <link rel="stylesheet" href="{%static "bootstrap.css"%}">
-   <link rel="stylesheet" href="{%static "style.css"%}">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="{%url "home"%}">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-            <a class="nav-link btn btn-primary" href="#">Github</a>
-          
-          
-          
-            <a class="nav-link btn btn-primary " href="#">LinkedIn</a>
-          
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            
-          </ul>
-         
-          <form class="form-inline my-2 my-lg-0" action="{%url "profile" %}" >
-            
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Profile</button>
-          </form>
-        </div>
-      </nav>
-      <br><br><br><br>
+      
       <div class="jumbotron container">
           <img src="{%static "image.jpg"%}" alt="" width="100" height="200"  class=" rounded float-left img-fluid"/>
-        <h1 class="display-3">Hello</h1>
+        <h1 class="display-4">ABOUT ME</h1>
         <h4 class="display-5">Web Developer</h4>
 
 
-        <p class="lead">My name is Zethembe Dlamin. I finished Highschool in 2017. My dream has always been to be
-          a programmer, but I couldn'nt afford to go to college. So i decided to learn Web Development online. I learned in sites 
-          like Udemy, Freecodecamp, Udacity and Edx. I am still learning, but now I feel like i am in an intermediate level.
+        <p class="lead">Fullstack web developer currently working as a freelancer
         </p>
         <hr class="my-4">
-        <p>You can also check out the projects i have worked on by following the link bellow.</p>
+        <p>You can also check out the projects i have worked on.</p>
         <p class="lead">
           <a class="btn btn-primary" href="#" role="button">Resume</a>
           <a class="btn btn-primary" href='#' role="button">Certificates</a>
           <a class="btn btn-primary" href='#' role="button">Projects</a>
         </p>
       </div>
-      <h1 class="display-3 container">Can work with: </h1>
+      <h1 style="font-weight: bolder;" class="display-3 container">Can work with: </h1>
       
       <div class="container">
       <img class="round" src="{%static "html_css.jpg"%}" alt="...">
@@ -71,6 +39,5 @@
       </ul>
     </div>
     </div>
-</body>
 
-</html>
+{%endblock%}
