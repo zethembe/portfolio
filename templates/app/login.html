@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="{%static "bootstrap.css"%}">
+    <link rel="stylesheet" href="{%static "style.css"%}">
+    <title>Document</title>
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="{%url "blog"%}">My Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{%url "about"%}">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Github</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link " href="#">LinkedIn</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0" action="{%url "profile" %}" >
+                    
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Profile</button>
+                  </form>
+                </div>
+              </nav>
+<br><br><br><br>
+
+    <div class="jumbotron container">
+            <h1 class="display-3">Welcome!</h1>
+            <p class="lead">Log in with your details below.</p>
+    <form method="POST">
+        {%csrf_token%}
+        <label for="username">Username: </label>
+      <input  name = "name_username"id='username' type="text">
+       <label for="password">Password: </label>
+      <input  name="name_password"id='password' type="password">
+        <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+</div>
+</body>
+</html>
