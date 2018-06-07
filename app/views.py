@@ -5,6 +5,7 @@ from app.models import Post
 import requests
 from django.utils import timezone
 
+
 # Create your views here.
 def blog(request):
     try:
@@ -27,6 +28,7 @@ def blog(request):
         joking = False
     
     model_view = Post.objects.all()
+    
     return render(request,'app/blog.html',{'model_view':model_view,'setup':setup,'punchline':punchline,'jokes':jokes,'time':time,'type':type,'joking':joking})
 
 
@@ -45,7 +47,6 @@ def post(request):
         form = forms.PostForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-        
             return render(request,'app/blog.html')
 
 def home(request):

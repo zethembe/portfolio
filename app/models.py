@@ -1,12 +1,13 @@
 from django.db import models
 from django.utils import timezone
 
-
-
-# Create your models here.
 class Post(models.Model):
-    author = models.CharField(max_length=100)
-    title = models.CharField(max_length = 400)
-    text = models.TextField()
-    created = models.DateField(default = timezone.now())
-    photo = models.ImageField(upload_to='images',blank =True,null=True)
+    author = models.CharField(max_length=200)
+    title = models.CharField(max_length=300)
+    text = models.TextField(max_length=1000)
+    created = models.DateField(default=timezone.now())
+    photo = models.ImageField(upload_to='images/',blank=True)
+
+    def __str__(self):
+        return self.title
+
